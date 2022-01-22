@@ -349,33 +349,53 @@
             </li>
         </ul>
     </div>
-    <div>
+    <div class="email">
         <p class="hover-article">ПОДПИШИТЕСЬ НА РАССЫЛКУ</p>
-        <form action="#" class="email-form">
-            <input type="email"
-            placeholder="E-mail"
-            name="email"
-            class="email-input">
-              </form>
-            <button type="submit" class="button-email">
-                <use >
+         <form action="#" class="email-form">
+                <input type="email" placeholder="E-mail" name="email" class="email-input">
+                <button type="submit" class="button-email">
+                Подписаться
+                <use>
                     <svg class="icon-send" href="./images/sprite.svg#icon-icon-send"></svg>
-                </use>Подписаться
+                </use>
             </button>
-    </div>
-    </div>
-    <use>
-        <svg class="icon-send" href="./images/sprite.svg#icon-icon-send"></svg>
-    </use>
-    </footer>
+            </form>
+           </div>
+        </footer>
     <div class="backdrop is-hidden" data-modal>
 <div class="modal">
     <button class="modal-close" data-modal-close>
         <svg class="icon-close">
-        <use  href="./images/symbol-defs (1).svg"></use>
+        <use  href="./images/sprite.svg#icon-close"></use>
     </svg>
-</button>
-</div>
+    </button>
+    <div class="modal-form">
+        <p class="modal-item">Оставьте свои данные, мы вам перезвоним</p>
+        <form action="#">
+            <label for="" class="modal-label">
+                Имя
+                <input type="text" name="user-name" class="modal-input">
+            </label>
+            <label for="" class="modal-label">
+                Телефон
+                <input type="tel" name="user-tel" class="modal-input">
+            </label>
+            <label for="" class="modal-label">
+                Почта
+                <input type="email" name="user-email" class="modal-input">
+            </label>
+            <label for="" class="modal-label">
+                Комментарий
+                <textarea name="comment" id=""  class="modal-input modal-textarea"
+                placeholder="Введите текст">
+                </textarea>
+            </label>
+    
+    
+        </form>
+    </div>
+    </div>
+    
     </div>
     <script src="./js/modal.js"></script>
 </body>
