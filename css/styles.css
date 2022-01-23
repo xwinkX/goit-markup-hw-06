@@ -45,6 +45,13 @@ ul {
 a {
   margin: 0;
 }
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
 .auth-nav {
   display: flex;
   margin-left: auto;
@@ -635,7 +642,11 @@ img {
   background-color: var(--beckground-color);
   opacity: 1;
   transition: transform var(--timing-function), opacity var(--timing-function);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
+
 .modal-close {
   position: absolute;
   width: 30px;
@@ -646,6 +657,10 @@ img {
   border-radius: 50%;
   cursor: pointer;
   background-color: var(--button-text-color);
+  outline: none;
+}
+.modal-close:focus > .icon-close {
+  fill: var(--accent-color);
 }
 .modal-item {
   font-size: 20px;
@@ -669,6 +684,16 @@ img {
 .modal-label:not(:nth-child(4)) {
   margin-bottom: 10px;
 }
+.modal-span {
+  position: relative;
+}
+.modal-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill var(--timing-function);
+}
 
 .modal-input {
   width: 100%;
@@ -676,6 +701,15 @@ img {
   margin-top: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  padding-left: 42px;
+  outline: none;
+  transition: border-color var(--timing-function);
+}
+.modal-input:focus {
+  border-color: var(--accent-color);
+}
+.modal-input:focus + .modal-icon {
+  fill: var(--accent-color);
 }
 .modal-textarea {
   height: 120px;
@@ -696,6 +730,27 @@ img {
   align-items: center;
   margin-bottom: 30px;
 }
+.license span {
+  display: flex;
+}
+
+.license-item:focus + .license-icon {
+  border-color: var(--accent-color);
+}
+.license-icon {
+  fill: transparent;
+  margin-right: 9px;
+  border: 2px solid var(--primary-text-color);
+  border-radius: 2px;
+}
+
+.license-item:checked + .license-icon {
+  background-color: var(--accent-color);
+  border: none;
+}
+.license-item:checked + .license-icon .check-svg {
+  fill: var(--button-text-color);
+}
 .license-title {
   line-height: 1.7;
   letter-spacing: 0.03em;
@@ -712,14 +767,22 @@ img {
   border-radius: 4px;
   background-color: var(--accent-color);
   cursor: pointer;
+  border: none;
 }
 .button-title {
   display: block;
   margin: 0 auto;
+  box-shadow: none;
+  transition: box-shadow var(--timing-function);
+}
+.button-title:hover,
+.button-title:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .icon-close {
   width: 11px;
   height: 11px;
+  transition: fill var(--timing-function);
 }
 
 .email-input {

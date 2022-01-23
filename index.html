@@ -366,7 +366,7 @@
 <div class="modal">
     <button class="modal-close" data-modal-close>
         <svg class="icon-close">
-        <use  href="./images/sprite.svg#icon-close"></use>
+        <use href="./images/sprite.svg#icon-close"></use>
     </svg>
     </button>
     <div class="modal-form">
@@ -374,15 +374,30 @@
         <form action="#">
             <label class="modal-label">
                 Имя
-                <input type="text" name="user-name" class="modal-input">
+                <span class="modal-span">
+                    <input type="text" name="user-name" class="modal-input">
+                    <svg class="modal-icon" width="18" height="18">
+                    <use href="./images/sprite.svg#icon-person"></use>                 
+                </svg>
+                </span>
             </label>
             <label  class="modal-label">
                 Телефон
-                <input type="tel" name="user-tel" class="modal-input">
+                <span class="modal-span">
+                    <input type="text" name="user-name" class="modal-input">
+                    <svg class="modal-icon" width="18" height="18">
+                        <use href="./images/sprite.svg#icon-phone"></use>
+                    </svg>
+                </span>
             </label>
             <label  class="modal-label">
                 Почта
-                <input type="email" name="user-email" class="modal-input">
+                <span class="modal-span">
+                    <input type="text" name="user-name" class="modal-input">
+                    <svg class="modal-icon" width="18" height="18">
+                        <use href="./images/sprite.svg#icon-email"></use>
+                    </svg>
+                </span>
             </label>
             <label for="user-text" class="modal-label">Комментарий</label>
                 <textarea
@@ -392,7 +407,13 @@
                 placeholder="Введите текст"
                 ></textarea>
                 <label class="license">
-                    <input type="checkbox" name="license">
+                    <span>
+                        <input class="license-item visually-hidden" type="checkbox" name="license">
+                        <svg class="license-icon" width="16" height="15">
+                            <use class="check-svg" href="./images/sprite.svg#icon-check"></use>
+                        </svg>
+                    </span>
+                    
                     Соглашаюсь с рассылкой и принимаю <a href="" class="license-title">Условия договора</a>
                     </label>
                     <button type="submit" class="modal-button button-title">Отправить</button>
